@@ -1,5 +1,6 @@
 import { usePizzaOfTheDay } from "./usePizzaOfTheDay";
 
+// feel free to change en-US / USD to your locale
 const intl = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
@@ -9,17 +10,7 @@ const PizzaOfTheDay = () => {
   const pizzaOfTheDay = usePizzaOfTheDay();
 
   if (!pizzaOfTheDay) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <h2>Loading...</h2>
-      </div>
-    );
+    return <div>Loading...</div>;
   }
 
   return (
